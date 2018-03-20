@@ -4,8 +4,16 @@ import javax.swing.JOptionPane;
 
 public class Vehicle {
 	
+	private final int _MAX_SPEED = 120;
+	
+	//Create the variables for the speed, license plate, and colour.
+	private int _speed;
+	private String _licensePlate = "000-000";
+	//private COLOUR _colour = COLOUR.Black;
+	private int _numDoors = ((int) (Math.random() * 4) + 1);
+	
 	//Create an enum to hold all the variables for colour.
-	public enum COLOUR
+	protected enum COLOUR
 	{
 		Red,
 		Black,
@@ -19,12 +27,19 @@ public class Vehicle {
 		Orange
 	}
 	
-	//Create the variables for the speed, license plate, and colour.
-	private int _speed = 0;
-	private final int _MAX_SPEED = 120;
-	private String _licensePlate = "000-000";
-	//private COLOUR _colour = COLOUR.Black;
-	private int _numDoors = ((int) (Math.random() * 4) + 1);
+	protected COLOUR _colour;
+	
+	public Vehicle()
+	{
+		_speed = 0;
+		_colour = COLOUR.Black;
+	}
+	
+	public Vehicle (String userLicensePlate, COLOUR userColour)
+	{
+		_licensePlate = userLicensePlate;
+		_colour = userColour;
+	}
 	
 	//This is the function to increase the speed.
 	public void Accelerate(int speedIncrease)
@@ -50,8 +65,9 @@ public class Vehicle {
 		this._speed -= speedDecrease;
 	}
 	
+	
 	//This is a function that randomizes the colour of the car.
-	private COLOUR randomColour()
+	protected COLOUR randomColour()
 	{
 		//This is to randomize the colours chosen for the car.
 		int random = new Random().nextInt(COLOUR.values().length);

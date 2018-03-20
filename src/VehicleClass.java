@@ -67,6 +67,8 @@ public class VehicleClass {
 				//Create two instances of the vehicle class.
 				Vehicle vehicle1 = new Vehicle();
 				Vehicle vehicle2 = new Vehicle();
+				BicycleClass bike1 = new BicycleClass();
+				Truck truck1 = new Truck();
 				
 				//Clear the listbox.
 				lstVehicles.removeAll();
@@ -79,6 +81,10 @@ public class VehicleClass {
 	            vehicle2.Accelerate(90);
 	            vehicle2.Brakes(40);
 	            lstVehicles.add("Vehicle #2: " + vehicle2.CurrentState());
+	            
+	            lstVehicles.add("Bike #1: " + bike1.CurrentState());
+	            
+	            lstVehicles.add("Truck #1: " + truck1.CurrentState());
 			}
 		});
 		btnCreateClasses.setBounds(159, 202, 122, 25);
