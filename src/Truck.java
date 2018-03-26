@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 //Use extends to inherit functions and properties from Vehicle.
 public class Truck extends Vehicle{
@@ -13,6 +14,30 @@ public class Truck extends Vehicle{
 	public Truck()
 	{
 		_colour = COLOUR.Black;
+	}
+	
+	//This is the function to increase the speed.
+	public void Accelerate(int speedIncrease)
+	{
+		//Increase the speed by the integer, speedIncrease, passed. If it's greater than the max speed, then:
+		if ((this._speed + speedIncrease) > _MAX_SPEED)
+		{
+			//Tell the user that they went over the max speed.
+			JOptionPane.showMessageDialog(null, "You went over the speed limit.");
+		}
+		//If it doesn't break the limit,
+		else
+		{
+			//Add the speedIncrease to the speed.
+			this._speed += speedIncrease;
+		}
+	}
+		
+	//This is the function that decreases the speed.
+	public void Brakes(int speedDecrease)
+	{
+		//Decrease the speed by the value, speedDecrease, passed.
+		this._speed -= speedDecrease;
 	}
 	
 	//This function forms the current state of the bike.

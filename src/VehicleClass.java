@@ -53,11 +53,11 @@ public class VehicleClass {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setSize(450, 300);
+		shell.setSize(530, 300);
 		shell.setText("Vehicle Class");
 		
 		List lstVehicles = new List(shell, SWT.BORDER);
-		lstVehicles.setBounds(10, 10, 414, 186);
+		lstVehicles.setBounds(10, 10, 494, 186);
 		
 		Button btnCreateClasses = new Button(shell, SWT.NONE);
 		btnCreateClasses.addSelectionListener(new SelectionAdapter() {
@@ -82,12 +82,16 @@ public class VehicleClass {
 	            vehicle2.Brakes(40);
 	            lstVehicles.add("Vehicle #2: " + vehicle2.CurrentState());
 	            
+	            bike1.Accelerate(80);
+	            bike1.Brakes(30);
 	            lstVehicles.add("Bike #1: " + bike1.CurrentState());
 	            
+	            truck1.Accelerate(70);
+	            truck1.Brakes(30);
 	            lstVehicles.add("Truck #1: " + truck1.CurrentState());
 			}
 		});
-		btnCreateClasses.setBounds(159, 202, 122, 25);
+		btnCreateClasses.setBounds(207, 202, 122, 25);
 		btnCreateClasses.setText("Create Classes");
 
 	}
